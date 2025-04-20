@@ -1,0 +1,354 @@
+// Tạo mixin focused
+@mixin focused {
+    outline: 2px solid blue;
+    box-shadow: 0 0 10px rgba(0, 0, 255, 0.5);
+}
+
+$transitionDuration: 0.3s;
+
+.landing-topbar {
+    position: fixed;
+    font-family: "SF Pro Display", 'Arial', sans-serif;
+    height: 4.6rem;
+    z-index: 997;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 0 2rem;
+    background-color: #e30019;
+    transition: left $transitionDuration;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 3px 5px rgba(0,0,0,.02), 0px 0px 2px rgba(0,0,0,.05), 0px 1px 4px rgba(0,0,0,.08);
+    z-index: 1000;
+
+    .landing-row-header{
+        display: flex;
+        justify-content:center;
+        width: 75%;
+        height: 100%;
+        align-items: center;
+        .landing-topbar-left-action{
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            padding-right: 10px;
+            width: auto;
+            height: 60%;
+        }
+        .landing-topbar-right-action{
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            width: auto;
+            height: 60%;
+
+            .header-action_link {
+                align-items: center;
+                justify-content: left;
+                display: flex;
+                padding: 0 10px;
+                height: 100%;
+                width: auto; /* Đặt width là auto để tự động điều chỉnh theo nội dung */
+                color: #FFF;
+                font-weight: bold;
+                border-radius: 5px;
+                transition: background-color 0.3s;
+            }
+            
+            .header-action_link-icon {
+                margin-right: 0px;
+            }
+            
+            .header-action_link-icon i {
+                font-size: 1.5rem;
+            }
+            
+            .box-text {
+                display: block;
+                margin-left: -5px;
+            }
+            
+            .box-icon {
+                width: 24px;
+                height: 42px;
+                align-items: center;
+                justify-content: center;
+                display: flex;
+            }
+            
+            .icon-large {
+                font-size: 24px;
+            }
+
+            .login{
+                background-color: #be1529;
+                color: #FFF;
+                margin-right: 10px;
+            }
+
+        }
+
+        .landing-topbar-search{
+            justify-content: left;
+            display: flex;
+            align-items: center;
+        }
+        .landing-topbar-search .input-search {
+            height: 42px;
+            width: 350px;
+            border-radius: 5px;
+        }
+
+        .landing-topbar-search .landing-topbar-button-search{
+            justify-content: center;
+            height: 40px;
+            width: auto;
+            border-radius: 5px;
+            margin-left: -42px;
+            background-color: #FFF;
+            color: black;
+        }
+    }
+
+    .landing-topbar-logo {
+        display: flex;
+        align-items: center;
+        color: var(--surface-900);
+        width: auto;
+        border-radius: 12px;
+        margin-right: 1rem;
+
+        img {
+            height: 2rem;
+            margin-right: 0.5rem;
+        }
+
+        &:focus {
+            @include focused();
+        }
+    }
+
+    .landing-topbar-menu-text {
+        font-size: 13px;
+        font-family: "SF Pro Display", 'Arial', sans-serif;
+        font-weight: bold;
+        margin-left: 10px;
+        color: #FFF;
+        width: auto;
+        display: block;
+        white-space: nowrap;      /* Ngăn text xuống dòng */
+        overflow: hidden;        /* Ẩn phần text vượt quá chiều rộng */
+        text-overflow: ellipsis; /* Thêm dấu "..." nếu text vượt quá chiều rộng */
+    }
+    
+
+    .landing-topbar-menu{
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        width: 120px;
+        background-color: #be1529;
+        height: 42px;
+        border-radius: 5px;
+        margin-right: 10rem;
+    }
+
+    .landing-topbar-button {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        color: #FFF;
+        border-radius: 50%;
+        width: auto;
+        height: 3rem;
+        cursor: pointer;
+        transition: background-color $transitionDuration;
+
+        &:hover {
+            color: var(--text-color);
+            background-color: #FFF;
+        }
+
+        &:focus {
+            @include focused();
+        }
+
+        i {
+            font-size: 1.5rem;
+        }
+
+        span {
+            font-size: 1rem;
+            display: none;
+        }
+    }
+
+    
+
+    .landing-menu-button {
+        margin-left: 2rem;
+    }
+
+    .landing-topbar-menu-button {
+        display: none;
+
+        i {
+            font-size: 1.25rem;
+        }
+    }
+
+    .landing-topbar-menu {
+        margin: 0 0 0 auto;
+        padding: 0;
+        list-style: none;
+        display: flex;
+
+        .landing-topbar-button {
+            margin-left: 1rem;
+        }
+    }
+}
+
+.cart-badge {
+    position: absolute;
+    top: -5px;
+    right: -8px;
+    background-color: #ffcc00;
+    color: #000;
+    font-size: 11px;
+    font-weight: bold;
+    border-radius: 50%;
+    width: 17px;
+    height: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+}
+
+.box-icon {
+    position: relative; 
+    width: 24px;
+    height: 42px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+
+.landing-menu{
+    top: 4.6rem;
+    width: 100%;
+    height: 50px;
+    background-color: #FFF;
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    font-family: "SF Pro Display", 'Arial', sans-serif;
+    display: flex;
+    z-index: 999;
+
+    .landing-menu-content{
+        width: auto;
+        height: 30px;
+        line-height: 30px;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+    .landing-menu-icon{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 10px;
+        height: 100%;
+        width: auto; /* Đặt width là auto để tự động điều chỉnh theo nội dung */
+        color: #000;
+        font-weight: bold;
+        transition: background-color 0.3s;
+        margin-left: 10px;
+    }
+    .landing-menu-item{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 10px;
+        height: 100%;
+        width: auto; /* Đặt width là auto để tự động điều chỉnh theo nội dung */
+        color: #000;
+        font-weight: bold;
+        transition: background-color 0.3s;
+        border-right: 1px solid #e5e5e5;
+    }
+    .landing-menu-text{
+        font-weight: 600;
+        font-size: 13px;
+        margin-right: 20px;
+    }
+}
+
+@media (max-width: 991px) {
+    .layout-topbar {
+        justify-content: space-between;
+
+        .layout-topbar-logo {
+            width: auto;
+            order: 2;
+        }
+
+        .landing-menu-button {
+            margin-left: 0;
+            order: 1;
+        }
+
+        .landing-topbar-menu-button {
+            display: inline-flex;
+            margin-left: 0;
+            order: 3;
+        }
+
+        .landing-topbar-menu {
+            margin-left: 0;
+            position: absolute;
+            flex-direction: column;
+            background-color: var(--surface-overlay);
+            box-shadow: 0px 3px 5px rgba(0,0,0,.02), 0px 0px 2px rgba(0,0,0,.05), 0px 1px 4px rgba(0,0,0,.08);
+            border-radius: 12px;
+            padding: 1rem;
+            right: 2rem;
+            top: 5rem;
+            min-width: 15rem;
+            display: none;
+            -webkit-animation: scalein 0.15s linear;
+            animation: scalein 0.15s linear;
+
+            &.landing-topbar-menu-mobile-active {
+                display: block
+            }
+
+            .landing-topbar-button {
+                margin-left: 0;
+                display: flex;
+                width: 100%;
+                height: auto;
+                justify-content: flex-start;
+                border-radius: 12px;
+                padding: 1rem;
+
+                i {
+                    font-size: 1rem;
+                    margin-right: .5rem;
+                }
+
+                span {
+                    font-weight: medium;
+                    display: block;
+                }
+            }
+        }
+    }
+}

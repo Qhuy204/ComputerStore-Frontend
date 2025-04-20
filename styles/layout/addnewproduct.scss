@@ -1,0 +1,68 @@
+.add-product-container {
+    padding-bottom: 70px; /* Space for fixed save button */
+    background-color: #f8f9fa;
+}
+
+.product-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background-color: #ffffff;
+}
+
+.save-status {
+    margin-right: 1rem;
+    color: #6c757d;
+}
+
+.product-images-container {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.image-upload-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed #ced4da;
+    border-radius: 6px;
+    padding: 2rem;
+    cursor: pointer;
+    min-height: 200px;
+    min-width: 200px;
+    text-align: center;
+}
+
+.image-upload-placeholder:hover {
+    background-color: #f8f9fa;
+}
+
+/* Fix for PrimeReact editor */
+.p-editor-container .p-editor-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Tooltip adjustments */
+.p-tooltip {
+    max-width: 250px;
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+    .product-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .header-actions {
+        margin-top: 1rem;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+}

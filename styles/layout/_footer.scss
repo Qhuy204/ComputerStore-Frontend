@@ -1,0 +1,113 @@
+.landing-footer{
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    display: flex;
+    background-color: #FFF;
+    margin-top: 40px;
+
+    .landing-footer-top {
+        display: flex;
+        width: 67%;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        // padding: 0px 0px;
+        margin-top: 40px;
+        font-family: "SF Pro Display", 'Arial', sans-serif;
+
+        .footer-col {
+          flex: 0 0 auto;
+          margin-bottom: 30px;
+          min-width: 150px;
+          
+          @media (max-width: 768px) {
+            flex: 0 0 50%;
+          }
+          
+          @media (max-width: 576px) {
+            flex: 0 0 100%;
+          }
+        }
+        
+        .footer-title {
+          font-size: 14px;
+          font-weight: 700;
+          color: #000;
+          text-transform: uppercase;
+          margin-bottom: 15px;
+        }
+        
+        .footer-list {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          color: #000;
+          
+          .item {
+            font-size: 13px;
+            color: #000;
+            margin-bottom: 8px;
+            cursor: pointer;
+            
+            &:hover {
+              color: #0066cc;
+              text-decoration: underline;
+            }
+          }
+        }
+        
+        // Special styling for phone numbers and email
+        .footer-col:nth-child(4) {
+          .item {
+            display: flex;
+            align-items: center;
+            
+            &:first-child, &:nth-child(2), &:nth-child(3) {
+              &::after {
+                content: attr(data-number);
+                color: #0066cc;
+                font-weight: 600;
+                margin-left: 5px;
+              }
+            }
+          }
+        }
+        
+        // Styling for shipping partners
+        .footer-col:nth-child(5) {
+          .footer-list {
+            display: flex;
+            flex-wrap: wrap;
+            
+            .item {
+              background-size: contain;
+              background-repeat: no-repeat;
+              background-position: center;
+              height: 30px;
+              width: 60px;
+              text-indent: -9999px;
+              margin-right: 10px;
+            }
+          }
+        }
+        
+        // Styling for payment methods
+        .footer-col:nth-child(6) {
+          .footer-list {
+            display: flex;
+            flex-wrap: wrap;
+            
+            .item {
+              background-size: contain;
+              background-repeat: no-repeat;
+              background-position: center;
+              height: 40px;
+              width: 60px;
+              text-indent: -9999px;
+              margin-right: 10px;
+              margin-bottom: 10px;
+            }
+          }
+        }
+      }
+}
